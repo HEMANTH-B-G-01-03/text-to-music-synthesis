@@ -21,28 +21,36 @@
 # model = model.to("cuda")
 
 # print("SUCCESS!")
-
 import torch
-from transformers import AutoProcessor
-from transformers import MusicgenForConditionalGeneration
 import time
 
+print("Step 1")
+
+from transformers import AutoProcessor
+print("Step 2")
+
+from transformers import MusicgenForConditionalGeneration
+print("Step 3")
+
 print("Loading processor...")
-processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
+processor = AutoProcessor.from_pretrained(
+    "facebook/musicgen-small"
+)
 print("Processor loaded")
 
-print("Before model load")
-start = time.time()
+print("Loading config only...")
+from transformers import AutoConfig
+
+config = AutoConfig.from_pretrained(
+    "facebook/musicgen-small"
+)
+print("Config loaded")
+
+print("Starting model load...")
 
 model = MusicgenForConditionalGeneration.from_pretrained(
     "facebook/musicgen-small",
     low_cpu_mem_usage=True
 )
 
-print("After model load")
-print("Load time:", time.time() - start)
-
-print("Moving to GPU...")
-model = model.to("cuda")
-
-print("GPU loaded successfully")
+print("MODEL LOADED")
