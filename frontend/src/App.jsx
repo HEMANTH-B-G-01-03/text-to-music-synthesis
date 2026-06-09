@@ -1,3 +1,9 @@
+// 
+
+
+
+
+
 import { useState } from "react";
 import API from "./services/api";
 
@@ -41,14 +47,65 @@ function App() {
       />
 
       {musicData && (
-        <div style={{ marginTop: "30px" }}>
-          <h3>Enhanced Prompt</h3>
-
-          <p>{musicData.enhanced_prompt}</p>
+        <div
+          style={{
+            marginTop: "30px",
+            padding: "20px",
+            border: "1px solid #ddd",
+            borderRadius: "12px",
+            backgroundColor: "#f9f9f9",
+          }}
+        >
+          <h2>🎵 Generated Music</h2>
 
           <AudioPlayer
             audioUrl={musicData.audio_url}
           />
+
+          <h3 style={{ marginTop: "20px" }}>
+            ✨ Enhanced Prompt
+          </h3>
+
+          <p>{musicData.enhanced_prompt}</p>
+
+          <h3 style={{ marginTop: "20px" }}>
+            🎧 Similar Songs
+          </h3>
+
+          {musicData.recommendations &&
+          musicData.recommendations.length > 0 ? (
+            <ul
+              style={{
+                paddingLeft: "20px",
+              }}
+            >
+              {musicData.recommendations.map(
+                (song, index) => (
+                  <li
+                    key={index}
+                    style={{
+                      marginBottom: "12px",
+                    }}
+                  >
+                    <a
+                      href={song.youtube_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        textDecoration: "none",
+                        color: "#1976d2",
+                        fontWeight: "500",
+                      }}
+                    >
+                      ▶ {song.title}
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
+          ) : (
+            <p>No recommendations found.</p>
+          )}
         </div>
       )}
     </div>
