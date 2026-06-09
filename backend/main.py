@@ -35,6 +35,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
 from backend.prompt_enhancer import enhance_prompt
 from backend.music_generator import generate_music
@@ -44,6 +45,13 @@ app.mount(
     "/outputs",
     StaticFiles(directory="outputs"),
     name="outputs"
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
