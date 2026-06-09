@@ -55,7 +55,7 @@ def generate_music(prompt):
     music = pipe(
         prompt,
         forward_params={
-            "max_new_tokens": 256
+            "max_new_tokens":  1024
         }
     )
 
