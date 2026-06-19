@@ -1,4 +1,4 @@
-.counter {
+/* .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -181,4 +181,282 @@
     right: 0;
     border-right-color: var(--border);
   }
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  font-family: "Poppins", sans-serif;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(139, 92, 246, 0.2),
+      transparent 30%),
+    radial-gradient(circle at top right,
+      rgba(59, 130, 246, 0.2),
+      transparent 30%),
+    #050816;
+
+  color: white;
+
+  min-height: 100vh;
+} */
+
+
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+
+  background:
+    linear-gradient(
+      rgba(5,8,22,0.85),
+      rgba(5,8,22,0.85)
+    ),
+    url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+  color: white;
+}
+
+
+
+.hero-section {
+  background: rgba(0,0,0,0.35);
+
+  backdrop-filter: blur(20px);
+
+  border-radius: 25px;
+
+  padding: 40px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 0 40px rgba(139,92,246,.4);
+
+  margin-bottom: 30px;
+}
+.app-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* .title {
+  font-size: 4rem;
+  font-weight: 800;
+
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #3b82f6,
+    #ec4899
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 10px;
+} */
+
+.title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #3b82f6,
+    #ec4899
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+.result-card {
+  margin-top: 35px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.4),
+    0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #8b5cf6;
+}
+
+.prompt-text {
+  color: #d1d5db;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.song-link {
+  text-decoration: none;
+  color: #60a5fa;
+  font-size: 1.05rem;
+
+  transition: 0.3s ease;
+}
+
+.song-link:hover {
+  color: #ec4899;
+  transform: translateX(10px);
+}
+
+.divider {
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.7),
+    transparent
+  );
+}
+
+
+.prompt-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.prompt-input {
+  width: 100%;
+  padding: 18px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(255,255,255,.2);
+
+  background: rgba(255,255,255,.05);
+
+  color: white;
+
+  font-size: 18px;
+
+  backdrop-filter: blur(15px);
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.prompt-input:focus {
+  border-color: #8b5cf6;
+
+  box-shadow:
+    0 0 15px rgba(139,92,246,.5);
+}
+
+.generate-btn {
+  border: none;
+
+  padding: 16px;
+
+  border-radius: 15px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  color: white;
+
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  transition: .3s;
+
+  box-shadow:
+    0 0 20px rgba(139,92,246,.5);
+}
+
+.generate-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 30px rgba(139,92,246,.8);
+}
+
+.audio-section {
+  text-align: center;
+}
+
+.audio-player {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.download-btn {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  color: white;
+
+  background: linear-gradient(
+    90deg,
+    #ec4899,
+    #8b5cf6
+  );
+
+  box-shadow:
+    0 0 15px rgba(236,72,153,.4);
+}
+
+.download-btn:hover {
+  opacity: 0.9;
 }
