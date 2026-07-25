@@ -82,3 +82,5 @@ plt.show()
 
 print("\n✅ Graph saved successfully!")
 print("Location: result_graphs/music_generation_time.png")
+
+
