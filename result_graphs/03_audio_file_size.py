@@ -73,3 +73,6 @@ plt.savefig(
 plt.show()
 
 print("\n✅ Graph saved successfully!")
+
+
+
