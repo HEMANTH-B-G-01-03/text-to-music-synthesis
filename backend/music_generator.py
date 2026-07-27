@@ -31,8 +31,8 @@
 
 #     return response.json()
 
-
-from transformers import pipeline
+# to get hugging face pipeline api
+from transformers import pipeline       
 import scipy
 import uuid
 import os
